@@ -30,7 +30,7 @@
 
 		} //end function
 
-		// ulternative solution with 'switch' istead of 'if'
+		// alternative solution with 'switch' istead of 'if'
 		function isEvenSwitch(num){
 			switch(true){
 				case (num<0):{console.log("can't use negative numbers"); return false;break;}
@@ -39,6 +39,23 @@
 				case(num>1):{num-=2; return isEven(num);}
 			}//end switch
 		}//end function
+
+		function countBs(word) {
+            // let count = 0;
+            // for(let i=0; i<word.length;i++){
+            //      if(word[i]=="B"){count++;}
+            //   }
+            // return count;
+            return countChar(word, "B");
+        }Í
+
+        function countChar(word, ch) {
+            let count =0;
+            for(let i=0; i<word.length;i++){
+                if(word[i]==ch){count++;}
+            }
+            return count;
+        }
 
 	</script>
 </body>
