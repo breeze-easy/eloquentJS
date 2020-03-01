@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chapter 2 exercises</h1>
+    <script>
+       
+       function chessboard (){
+            let s;
+            for(i=0;i<8;i++){
+                    i%2==1 ? s="  " : s="";
+            for(j=0;j<8;j++){
+                    s+="#  ";           
+            }//end j loop
+            console.log(s + "\n");
+            }//end i loop
+        }//end of function
+
+        function fizzBuzz(){
+            for (let i = 1; i <=100; i++){               
+                if(i%5==0 && i%3==0)console.log("FizzBuzz");
+                else if(i%5==0) console.log("Buzz");
+                else if(i%3==0) console.log("Fizz");
+                else console.log(i);
+            }//end loop
+        }//end function
+
+        function fizzBuzzSwitch(){
+            for (let i = 0; i <100; i++){
+                switch(true){
+                    case (i!=0 && i%3==0 && i%5==0):
+                        console.log("FizzBuzz");
+                        break;                    
+                    case (i!=0 && i%3==0):
+                        console.log("Buzz");
+                        break;
+                    case (i!=0 && i%5==0):
+                        console.log("Fizz");
+                        break;
+                    default:
+                        console.log(i);
+                }//end switch
+            }//end loop
+        }//end function
+
+    </script>
+</body>
+</html>

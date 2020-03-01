@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// Write a function min that takes two arguments 
+		// and returns their minimum.
+		function min(a, b){
+			let result = 0;
+			a<=b? result=a : result=b;
+			return result;
+		}
+
+		// determines if argument is even or odd using recursive approach
+		// Parametr: whole number >=0
+		// Returns: boolean type true for even, false for odd numbers
+		function isEven(num) {
+		  if (num<0){
+		     console.log("you can't use negative numbers when calling this function");
+			 return false;}
+		  else if(num==0){return true;}
+		  else if(num==1){return false;}
+		  else{// if num >1: 2,3,etc function calling itself (recursively) with num -2
+		     num-=2;
+		     return isEven(num);
+		  } //end if
+
+		} //end function
+
+		// ulternative solution with 'switch' istead of 'if'
+		function isEvenSwitch(num){
+			switch(true){
+				case (num<0):{console.log("can't use negative numbers"); return false;break;}
+				case (num==0):{return true;}
+				case (num==1):{return false;}
+				case(num>1):{num-=2; return isEven(num);}
+			}//end switch
+		}//end function
+
+	</script>
+</body>
+</html>
