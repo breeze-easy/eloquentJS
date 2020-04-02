@@ -64,8 +64,16 @@
 			}
 			return list;
 		}
-		
 
+		function listToArray(list) {
+		  let array = [];
+		  for (let node = list; node; node = node.rest) {
+		    array.push(node.value);
+		  }
+		  return array;
+		}		
+		
+		
 		// check diff in performance between 
 		// reverseArray() and reverseArrayInPlace()
 		function performanceDiff(numOfElements){
@@ -95,8 +103,7 @@
 			t1 = performance.now();
 			dt = t1 - t0;
 			console.log("Call to reverseArrayInPlace2() with array containing " + numOfElements + "\n took " + dt + " millisceconds");
-			
-		}
+		}		
 
 	</script>
 </body>
