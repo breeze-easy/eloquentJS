@@ -1,10 +1,103 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  
+	<meta charset="UTF-8">
+	<title>Chapter 4</title>
 </head>
 <body>
-  <h1>Expirementing with Git branches</h1>
-  <div>
-  	<h3>Adding new text</h3>
-  </div>
+	<h1>Chapter 4</h1>
+
+	<script>
+		function range (start, end){
+			let arrResult = [];
+			do{
+				arrResult.push(start);
+				start++;
+			}while(start <= end);
+			return arrResult;
+		}
+
+		function sum(numArray){
+			let result = 0;
+			for(let el of numArray){
+				result += el;
+			}
+			return result;
+		}
+
+		// returns copy of an array in inverse order
+		function reverseArray(array){
+			arrResult = [];
+			index = array.length-1; //index of last element of array
+			while(index>=0){
+				arrResult.push(array[index--]);
+			}
+			return arrResult;
+		}
+
+		// reverses array supplied as an argument
+		function reverseArrayInPlace(array){
+			let lastIndex = array.length-1;
+			let arrTemp = [];
+			while(lastIndex>=0){
+				arrTemp.push(array[lastIndex--]);
+			}
+			array = arrTemp;
+			return array;
+
+		}
+
+		// reverse array by swapping elements within array
+		function reverseArrayInPlace2(array){
+			for(let i=0; i < Math.floor(array.length / 2); i++){
+				let old = array[i];
+				array[i] = array[array.length - 1 - i];
+				array[array.length - 1 - i] = old;
+			}
+			return array;
+		}
+
+		function arrayToList(array){
+			let list = null;
+			for(let i = array.length -1; i >= 0; i--){
+				list = {value: array[i], rest: list};
+			}
+			return list;
+		}
+		
+
+		// check diff in performance between 
+		// reverseArray() and reverseArrayInPlace()
+		function performanceDiff(numOfElements){
+			let arr = function(){
+				let arrTemp = [numOfElements];
+				for(let i=0; i<numOfElements;i++){arrTemp[i] = i;}
+				return arrTemp;
+			};	
+
+			//timing reverseArray()
+			let t0 = performance.now();
+			reverseArray(arr);
+			let t1 = performance.now();
+			let dt = t1 - t0;
+			console.log("Call to reverseArray() with array containing " + numOfElements + "\n took " + dt + " millisceconds");
+
+			//timing reverseArrayInplace()
+			t0 = performance.now();
+			reverseArrayInPlace(arr);
+			t1 = performance.now();
+			dt = t1 - t0;
+			console.log("Call to reverseArrayInPlace() with array containing " + numOfElements + "\n took " + dt + " millisceconds");
+
+			//timing reverseArrayInplace2()
+			t0 = performance.now();
+			reverseArrayInPlace2(arr);
+			t1 = performance.now();
+			dt = t1 - t0;
+			console.log("Call to reverseArrayInPlace2() with array containing " + numOfElements + "\n took " + dt + " millisceconds");
+			
+		}
+
+	</script>
 </body>
+</html>
